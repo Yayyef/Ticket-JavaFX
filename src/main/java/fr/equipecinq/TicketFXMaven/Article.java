@@ -11,6 +11,10 @@ public class Article {
 		this.price = price;
 	}
 	
+	public Article() {
+		// TODO Auto-generated constructor stub
+	}
+
 	// Mes getters
 	public String getName() {
 		return this.name;
@@ -22,6 +26,9 @@ public class Article {
 		return this.price;
 	}
 	
+	public void incrementAmount() {
+		this.amount++;
+	}
 	
 	
 	// La méthode qui calcule le total pour un article

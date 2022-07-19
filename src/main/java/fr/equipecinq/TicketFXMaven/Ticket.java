@@ -36,13 +36,19 @@ public class Ticket {
 	public String displayTicket() {
 		StringBuilder ticketString = new StringBuilder();
 		
-		ticketString.append("\n" + "\t\t*******CHEZ MOUNIR*******" + "\n");
+		ticketString.append("\n\n\n\n" + "\t\t*******CHEZ MOUNIR*******" + "\n\n\n");
 		
 		for (Article a : this.order.getArticleList()) {
 
-			ticketString.append("\tArticle: " + a.getName() + "\tx" + Integer.toString(a.getAmount()) + "         Prix: " + Double.toString(a.getPrice()) + "\n");
+			ticketString.append("\tArticle: " + a.getName() + "\tx" + Integer.toString(a.getAmount()) + "         Prix: " + Double.toString(a.getPrice()) + "€\t\n\n");
 
 		}
+		
+		ticketString.append("\t~~~~~~~~~~~~~~~~~~~~~~~~~~\t"
+				+ "\n\tTOTAL HORS TAXES " + this.order.totalHtt()
+				+ "€\n\tTOTAL TTC " + this.order.totalOrder()
+				+ "€\n"
+				+ "\t\tMerci pour votre achat!\n\n\n\n");
 		
 		return ticketString.toString();
 	}
